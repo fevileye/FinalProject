@@ -1,0 +1,26 @@
+
+.toolbarFooter{
+    border: thin solid blue;
+    padding:5px;
+    margin :20px;
+    text-align: right;
+}
+
+.input{
+    height:500px;
+    overflow: hidden;   
+}
+
+.leftInput{
+    float:left;
+}
+
+.rightInput{
+    float:left;
+}
+
+ul li{
+    list-style-type: none;
+    padding:8px;
+    margin: 0;
+}   

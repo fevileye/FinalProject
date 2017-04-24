@@ -1,0 +1,134 @@
+<section>
+<header>
+  <h2>Add Employee</h2>
+</header>
+<form 
+  [formGroup]="form"
+  (ngSubmit)="onSubmit(form.value)">
+  <section class="input">
+
+  <section class="leftInput">
+  <ul>
+    <li>
+       <md-input-container>
+         <input  mdInput placeholder="First Name" value="{{employee ?  employee.firstName : ''}}" formControlName="firstName">
+      </md-input-container>
+      <div *ngIf="form.controls.firstName.errors?.pattern" class="error">
+        First Name has invalid characters
+      </div>
+    </li>
+
+    <li>
+       <md-input-container>
+         <input  mdInput placeholder="Last Name" value="{{employee ? employee.lastName:''}}" formControlName="lastName">
+      </md-input-container>
+        <div *ngIf="form.controls.lastName.errors?.pattern" class="error">
+        Last Name has invalid characters
+      </div>
+    
+    </li>
+
+    <li>
+     <md-select placeholder="Gender" name="gender">
+     <md-option *ngFor="let gender of genders" [value]="gender.value">
+      {{gender.viewValue}}
+      </md-option>
+      </md-select>
+   </li>
+
+    <li>
+       <md-input-container>
+         <input  type="date" mdInput placeholder="Date of Birth" value="{{employee ? employee.dateOfBirth : ''}}">
+      </md-input-container>
+    </li>
+
+     <li>
+       <md-input-container>
+         <input   mdInput placeholder="Nationality" value="{{employee ? employee.nationality : ''}}" formControlName="nationality">
+      </md-input-container>
+      <div *ngIf="form.controls.nationality.errors?.pattern" class="error">
+        Nationality has invalid characters
+      </div>
+    </li>
+
+     <li>
+       <md-input-container>
+         <input  mdInput placeholder="Martial Status" value="{{employee ? employee.martial_status : ''}}" formControlName="martialStatus">
+      </md-input-container>
+      <div *ngIf="form.controls.martialStatus.errors?.pattern" class="error">
+        Nationality has invalid characters
+      </div>
+    </li>
+
+
+    <li>
+       <md-input-container> 
+         <input  mdInput placeholder="Phone" value="{{employee ? employee.phone : ''}}" formControlName="phone">
+      </md-input-container>
+      <div *ngIf="form.controls.phone.errors?.pattern" class="error">
+        Nationality has invalid characters
+      </div>
+    </li>
+  </ul>
+  </section>
+
+<section class="rightInput">
+  <ul>
+    <li>
+       <md-input-container>
+         <input  mdInput placeholder="Sub Division" value="{{employee ? employee.subDivision: ''}}" formControlName="subDivision">
+      </md-input-container>
+      <div *ngIf="form.controls.subDivision.errors?.pattern" class="error">
+        Sub Division has invalid characters
+      </div>
+    </li>
+
+    <li>
+       <md-input-container>
+         <input  mdInput placeholder="Suspend Date" value="{{employee ? employee.suspendDate: ''}}" formControlName="suspendDate">
+      </md-input-container>
+      <div *ngIf="form.controls.suspendDate.errors?.pattern" class="error">
+        Suspend Date has invalid characters
+      </div>
+    </li>
+    
+    <li>
+       <md-input-container>
+         <input  type="date" mdInput placeholder="Hire Date" value="">
+      </md-input-container>
+    </li>
+
+    <li>
+     <md-select placeholder="Grade" name="grade">
+     <md-option *ngFor="let gender of genders" [value]="gender.value">
+      {{gender.viewValue}}
+      </md-option>
+      </md-select>
+   </li>
+
+    <li>
+     <md-select placeholder="Division" name="division">
+     <md-option *ngFor="let gender of genders" [value]="gender.value">
+      {{gender.viewValue}}
+      </md-option>
+      </md-select>
+    </li>
+
+    <li>
+       <md-input-container>
+         <input  mdInput placeholder="Email" value="{{employee ? employee.email : ''}}">
+      </md-input-container>
+    </li>
+
+
+  </ul>
+  </section>
+  </section>
+
+  <section class="toolbarFooter">
+  <button md-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
+  <button md-button color="warn" (click)="onCancelClicked()"> Cancel</button>
+  </section>
+  </form>
+</section>
+

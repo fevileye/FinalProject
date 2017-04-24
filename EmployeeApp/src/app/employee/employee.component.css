@@ -1,0 +1,27 @@
+.employeeData{
+   margin:5px;
+   padding:4px;
+}
+
+.employeeData:hover{
+    background-color: lightsteelblue;
+}
+
+.employeeData:active{
+    background-color: deepskyblue;
+}
+
+:host.highlight .employeeData{
+   background-color: deepskyblue;
+}
+
+.profilePicture{
+    width:70px;
+    height:70px;
+    float:left;
+    overflow: hidden;
+    padding:5px;
+}
+
+
+
